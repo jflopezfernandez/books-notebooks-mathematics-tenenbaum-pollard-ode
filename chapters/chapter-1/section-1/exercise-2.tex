@@ -1,0 +1,41 @@
+\begin{exercise}
+	Assume that the half-life of the radium in a piece of lead is $1600$ years. How much radium will be lost in $100$ years?
+\end{exercise}
+\begin{solution}
+	Again, the equation relating the decay of radium to the amount of radium present in the piece of lead is
+	\begin{equation*}
+	\frac{dy}{dt} = -Ky.
+	\end{equation*}
+	We again separate the differentials and integrate to find $y\left(t\right)$.
+	\begin{align*}
+	\int \frac{1}{y} \  dy &= \int -K \ dt \\
+	\ln \left| y \right| &= -Kt + C \\
+	e^{\ln y} &= e^{-Kt + C} \\
+	y &= Ce^{-Kt}
+	\end{align*}
+	Since no radium has decayed at time $t = 0$, we can assume $C = 1$.
+	\begin{equation}
+	\label{equation-ch1-s1-exercise-2}
+	y = e^{-Kt}
+	\end{equation}
+	Given that the half-life of radium is $1600$ years, we can use this to find the proportionality constant $K$.
+	\begin{align*}
+	\frac{1}{2} &= e^{-1600K} \\
+	\ln \frac{1}{2} &= \ln e^{-1600K} \\
+	\ln \frac{1}{2} &= -1600K \\
+	-\frac{\ln \frac{1}{2}}{1600} &= K
+	\end{align*}
+	We now use this value of $K$ in Equation~\ref{equation-ch1-s1-exercise-2} with $t = 100$ for our final answer.
+	\begin{align*}
+	y &= e^{-\left(-\frac{\ln \frac{1}{2}}{1600}\right)\left(100\right)} \\
+	&= e^{\frac{\ln \frac{1}{2}}{16}} \\
+	&= 0.9576
+	\end{align*}
+	Since this is the amount of radium present after $100$ years, and we are looking for the amount \textit{lost}, we must subtract from $1$ to get our final answer.
+	\begin{align*}
+	\text{amount of radium lost} &= 1 - 0.9576 \\
+	&= 0.0424 \\
+	&\approx 4.24\%
+	\end{align*}
+	Therefore, after $100$ years, approximately $4.24\%$ of the radium in the piece of lead has been lost.
+\end{solution}

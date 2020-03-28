@@ -1,0 +1,39 @@
+\begin{exercise}
+	The radium in a piece of lead decomposes at a rate which is proportional to the amount present. If $10$ percent of the radium decomposes in $200$ years, what percent of the original amount of radium will be present in a piece of lead after $1000$ years?
+\end{exercise}
+\begin{solution}
+	The differential equation relation the rate of decay to the amount of radium is first-order and linear.
+	\begin{equation*}
+	\frac{dy}{dt} = -Ky
+	\end{equation*}
+	To solve for $y$, we separate the differentials and integrate both sides.
+	\begin{align*}
+	\int \frac{1}{y} \  dy &= \int -K \  dt \\
+	\ln \left| y \right| &= -Kt + C \\
+	e^{\ln y} &= e^{-Kt + C} \\
+	y &= e^{-Kt + C} \\
+	y &= Ce^{-Kt}
+	\end{align*}
+	Since $0\%$ of the radium has decayed at time $t = 0$, we can assume $C = 1$.
+	\begin{equation}
+	\label{equation-ch1-s1-exercise-1}
+	y = e^{-Kt}
+	\end{equation}
+	To find the value of the proportionality constant, we use the $10\%$ decay over $200$ years.
+	\begin{align*}
+	0.9 &= e^{-200K} \\
+	\ln 0.9 &= \ln e^{-200K} \\
+	\ln 0.9 &= -200K \\
+	-\frac{\ln 0.9}{200} &= K
+	\end{align*}
+	We now plug in this value for the proportionality constant into Equation~\ref{equation-ch1-s1-exercise-1} with $t = 1000$ to get our final answer.
+	\begin{align*}
+	y\left(t\right) &= e^{-\left(\frac{-\ln 0.9}{200}\right)\left(1000\right)} \\
+	&= e^{5\ln 0.9} \\
+	&= e^{\ln 0.9^5} \\
+	&= 0.9^5 \\
+	&= 0.59049 \\
+	&\approx 0.5905
+	\end{align*}
+	Therefore, approximately $59.05\%$ of the radium is still present in the piece of lead after $1000$ years.
+\end{solution}

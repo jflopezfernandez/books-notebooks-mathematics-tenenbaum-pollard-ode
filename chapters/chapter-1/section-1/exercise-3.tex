@@ -1,0 +1,39 @@
+\begin{exercise}
+	The following item appeared in a newspaper. ``The expedition used the carbon-14 test to measure the amount of radioactivity still present in the organic material found in the ruins, thereby determining that a town existed there as long ago as $7000$ B.C.'' Using the half-life figure of $\textbf{C}^{14}$ as given in the text, determine the approximate percentage of $\textbf{C}^{14}$ still present in the organic material at the time of the discovery.
+\end{exercise}
+\begin{remark}
+	The text uses a $\textbf{C}^{14}$ half-life of $5600$ years\supercite{ordinary-differential-equations}.
+\end{remark}
+\begin{solution}
+	We begin with the differential equation for exponential decay.
+	\begin{equation*}
+	\label{equation-ch1-s1-exercise-3}
+	\frac{dy}{dt} = -Ky
+	\end{equation*}
+	Since Equation~\ref{equation-ch1-s1-exercise-3} is a separable linear first-order equation, we divide both sides by $y$ and integrate with respect to $dy$ and $dt$.
+	\begin{align*}
+	\int \frac{1}{y} \ dy &= \int -K \ dt \\
+	\ln \left| y \right| &= -Kt + C \\
+	e^{\ln y} &= e^{-Kt + C} \\
+	y &= Ce^{-Kt}
+	\end{align*}
+	Since no carbon-14 has decayed at time $t = 0$, we can assume $C = 1$, and we thus have the general equation for the quantity of carbon-14 with respect to time.
+	\begin{equation*}
+	y = e^{-Kt}
+	\end{equation*}
+	Assuming a half-life of $5600$ years, we now solve for the proportionality constant of the rate of decay.
+	\begin{align*}
+	y\left(t\right) &= e^{-K\left(5600\right)}, \quad \text{for } y\left(t\right) = \frac{1}{2} \\
+	\frac{1}{2} &= e^{-5600K} \\
+	\ln \frac{1}{2} &= \ln e^{-5600K} \\
+	\ln \frac{1}{2} &= -5600K \\
+	-\frac{\ln \frac{1}{2}}{5600} &= K
+	\end{align*}
+	We now use this value for the proportionality constant and a value of $t = 9000$\footnote{Since the town existed during $7000$ B.C., the total elapsed time in years is $7000 + 2000$, assuming a current year of somewhere in the early 2000's.} for our final answer.
+	\begin{align*}
+	y\left(9000\right) &= e^{-\left(-\frac{\ln \frac{1}{2}}{5600}\right)\left(9000\right)} \\
+	&= e^{\frac{9000 \ln \frac{1}{2}}{5600}} \\
+	&\approx 0.3282
+	\end{align*}
+	Therefore, about 32.82\% of the carbon-14 is still present in the organic material 9000 years later.
+\end{solution}
