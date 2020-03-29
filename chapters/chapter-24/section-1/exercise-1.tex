@@ -1,0 +1,27 @@
+\begin{exercise}
+	Prove by induction that
+	\begin{equation*}
+	1^2 + 2^2 + 3^2 + \cdots + n^2 = \frac{n \left( n + 1 \right) \left( 2n + 1 \right)}{6}.
+	\end{equation*}
+\end{exercise}
+\begin{proof}
+	We begin by proving the base case for $n = 1$.
+	\begin{align*}
+	\sum_{n = 1}^{1} n^2 &= \frac{ n \left( n + 1 \right) \left( 2n + 1 \right)}{6} \\
+	1^2 &= \frac{ \left( 1 \right) \left( \left( 1 \right) + 1 \right) \left( 2 \left( 1 \right) + 1 \right) }{6} \\
+	1 &= \frac{ \left( 2 \right) \left( 3 \right) }{6} \\
+	1 &= \frac{6}{6} \\
+	1 &= 1
+	\end{align*}
+	We now proceed to the inductive step. Having show that the base case holds, we now suppose that the predicate is true for $n$ and proceed to prove for $n + 1$.
+	\begin{align*}
+	1^2 + \cdots + n^2 + \left( n + 1 \right)^2 &= \frac{ n \left( n + 1 \right) \left( 2n + 1 \right) }{6} + \left( n + 1 \right)^2 \\
+	&= \frac{n \left( n + 1 \right) \left( 2n + 1 \right) + 6 \left( n + 1 \right)^2 }{6} \\
+	&= \frac{ \left( n^2 + n \right) \left( 2n + 1 \right) + 6 \left( n + 1 \right) \left( n + 1 \right) }{6} \\
+	&= \frac{ \left( 2n^3 + 2n^2 + n^2 + n \right) + 6 \left( n^2 + 2n + 1 \right) }{6} \\
+	&= \frac{ 2n^3 + 9n^2 + 13n + 6 }{6} \\
+	&= \frac{ \left( n + 1 \right) \left( 2n^2 + 7n + 6 \right) }{6} \\
+	&= \frac{ \left( n + 1 \right) \left( n + 2 \right) \left( 2n + 3 \right) }{6} \\
+	&= \frac{ \left( \left( n \right) + 1 \right) \left( \left( n + 1 \right) + 1 \right) \left( 2 \left( n + 1 \right) + 1 \right) }{6}
+	\end{align*}
+\end{proof}
